@@ -10,11 +10,11 @@
 </head>
 <body>
     
-    <form class="card">
+    <form class="card" action="index.html" method="post" enctype="application/x-www-form-urlencoded">
         <div class="card-header">
             <h2>Payment form example</h2>
         </div>
-        <div class="alert alert-danger m-3" id="alert" role="alert">
+        <div class="alert alert-danger m-3 d-none" id="alert" role="alert" >
             Some fields are missing
         </div>
         <div class="card-body">
@@ -22,13 +22,13 @@
                 <div class="col-5">
                     <fieldset class="mb-3">
                       <label for="card-number" class="form-label">Card#</label>
-                      <input type="text" id="card-number" class="form-control" name="card-number" pattern="[0-9]{16}" placeholder="XXXXXXXXXXXXXXXX" size="25" required>  
+                      <input type="text" id="card-number" class="form-control validate" name="card-number" pattern="[0-9]{16}" placeholder="XXXXXXXXXXXXXXXX" size="25" required>  
                     </fieldset>
                 </div>
                 <div class="col-3">
                     <fieldset class="mb-3">
                         <label for="cvc-number" class="form-label">CVC#</label>
-                        <input type="text" id="cvc-number" class="form-control" name="cvc-number" pattern="[0-9]{4}" placeholder="0000" required> 
+                        <input type="text" id="cvc-number" class="form-control validate" name="cvc-number" pattern="[0-9]{4}" placeholder="0000" required> 
                     </fieldset>
                 </div>
                 <div class="col-4">
@@ -36,7 +36,7 @@
                         <label for="amount" class="form-label">Amount</label>
                         <div class="input-group">
                             <span class="d-flex align-items-center"><strong>$</strong></span>
-                            <input type="number" id="amount" class="form-control" name="amount" pattern="(\d+)(\.\d{1,2})?" placeholder="Amount" required>
+                            <input type="text" id="amount" class="form-control validate" name="amount" pattern="(\d+)(\.\d{1,2})?" placeholder="Amount" required>
                         </div>
                     </fieldset>
                 </div>
@@ -45,11 +45,11 @@
                 <div class="col-6">
                     <fieldset class="mb-3">
                         <label for="first-name" class="form-label">First Name</label>
-                        <input type="text" id="first-name" class="form-control" name="first-name" required>
+                        <input type="text" id="first-name" class="form-control validate" name="first-name" required>
                     </fieldset>
                     <fieldset class="mb-3">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" id="city" class="form-control" name="city" required>
+                        <input type="text" id="city" class="form-control validate" name="city" required>
                     </fieldset>
                     <fieldset class="mb-3">
                         <label class="form-label">We accept:</label>
@@ -65,14 +65,14 @@
                 <div class="col-6">
                     <fieldset class="mb-3">
                         <label for="last-name" class="form-label">Last Name</label>
-                        <input type="text" id="last-name" class="form-control" name="last-name" required>
+                        <input type="text" id="last-name" class="form-control validate" name="last-name" required>
                     </fieldset>
                     <div class="row">
                         <div class="col-6">
                            <fieldset class="mb-3">
                                 <label class="form-label">State</label>
-                                <select name="state" class="form-select" required>
-                                    <option selected>Pick a state</option>
+                                <select name="state" class="form-select validate" required>
+                                    <option selected value="">Pick a state</option>
                                     <option value="1">Alabama</option>
                                     <option value="2">California</option>
                                     <option value="3">Delaware</option>
@@ -84,7 +84,7 @@
                         <div class="col-6">
                             <fieldset class="mb-3">
                                 <label for="postal-code" class="form-label">Postal code</label>
-                                <input type="number" id="postal-code" class="form-control" name="postal-code"required>
+                                <input type="number" id="postal-code" class="form-control validate" name="postal-code"required>
                             </fieldset>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="3"></textarea>
-                            <p class="text-muted">Add any notes here.</p>
+                            <p class="form-text">Add any notes here.</p>
                         </div>
                     </fieldset>
                 </div>
